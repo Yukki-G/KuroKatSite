@@ -97,6 +97,12 @@ nav span {
     width: 100%;
 }
 
+@media (max-width: 600px) {
+    nav {
+        gap: 1rem;
+    }
+}
+
 /* Main -> pfp/info*/
 
 .present {
@@ -370,18 +376,18 @@ nav span {
 
 .tienda-cmd {
     margin: auto;
-    width: 80%;
+    width: 100%;
     border-top: 3px solid #ffffff80;
     padding: 2rem;
-    padding-bottom: 6rem;
     padding-right: 2rem;
+    padding-bottom: 6rem;
 }
 
 .tienda-tabla {
     color: #fff;
     width: 100%;
     border-collapse: collapse;
-    font-size: clamp(0.8rem, 3vw, 1.3rem);
+    font-size: clamp(0.7rem, 2.6vw, 1.3rem);
 }
 
 .tienda-tabla th {
