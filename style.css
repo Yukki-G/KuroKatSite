@@ -374,6 +374,7 @@ nav span {
     border-top: 3px solid #ffffff80;
     padding: 2rem;
     padding-bottom: 6rem;
+    padding-right: 2rem;
 }
 
 .tienda-tabla {
@@ -418,7 +419,7 @@ nav span {
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: 1rem 2rem 2rem 2rem;  
+    padding: 1rem 0 2rem 2rem;  
     gap: 6rem;                      
 }
 
@@ -508,8 +509,8 @@ nav span {
 }
 
 .inv img {
-    width: 300px;  
-    height: 200px;
+    width: clamp(12rem, 20vw, 18.75rem);  
+    height: clamp(8rem, 20vw, 12.5rem);
     object-fit: contain;
     border-radius: 26px;              
 }
@@ -533,6 +534,15 @@ nav span {
 .inv-button a {
     color: #fff;
     text-decoration: none;
+}
+
+@media (max-width: 800px) {
+    .inv {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;       
+    }
 }
 
 /* Main => Creditos*/
