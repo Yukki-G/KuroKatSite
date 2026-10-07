@@ -1,0 +1,619 @@
+/* Zona de animaciones */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.reveal.visible {
+    opacity: 100%;
+    transform: translateY(0);
+}
+
+
+* {
+    font-family:Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.fondo {
+    position: fixed;
+    inset: 0;
+    background-image: url("images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    filter: blur(5px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+/* Navegacion */
+
+nav {
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 2.5rem;
+    padding: 0.5rem;
+    z-index: 100;
+    background-color: #7a7a7a88;
+    margin: 1rem 0rem 1rem 0rem;
+    border-radius: 15px;
+    gap: 3rem;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+nav img {
+    width: clamp(2rem, 4vw, 2.5rem);
+    height: clamp(2rem, 4vw, 2.5rem);
+    border-radius: 50%;
+    position: absolute;
+    left: 1rem;
+}
+
+.nav-pfp {
+    padding-bottom: 2.5rem;
+}
+
+nav span {
+    font-size: clamp(1rem, 3vw, 2rem);
+    color: #fff;
+    user-select: none;
+    pointer-events: none;
+}
+
+.nav-sub {
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    
+}
+
+.nav-sub::after {
+    content: '';
+    position: absolute;
+    bottom: 0;         /* cámbialo a top: 0 si quieres overline */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-sub:hover::after {
+    width: 100%;
+}
+
+/* Main -> pfp/info*/
+
+.present {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 6rem 2rem 2rem 2rem;  
+    gap: 10rem;                      
+}
+
+.present img {
+    width: clamp(9rem, 20vw, 20rem);  
+    height: clamp(9rem, 20vw, 20rem);
+    border-radius: 50%;
+    flex-shrink: 0;                 
+}
+
+.contain-info {
+    color: white;
+    max-width: 500px;
+    border-left: 3px solid #ffffff50;
+    padding-left: 2rem;
+    padding-right: 3rem;              
+}
+
+.nombre {
+    font-size: clamp(1.8rem, 4vw, 3.5rem); 
+}
+
+.info {
+    font-size: clamp(1rem, 2vw, 1.3rem);   
+}
+
+/* En pantallas chicas: todo en columna, centrado */
+@media (max-width: 600px) {
+    .present {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 5rem;
+    }
+}
+
+/* Main -> tarjetas */
+
+.contain-tarj {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 6rem;
+    padding-top: 4rem;
+}
+
+.tarj-sub {
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    width: clamp(10rem, 15vw, 14rem);
+    border: 1px solid #ffffff80;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    gap: 0.5rem;
+}
+
+.tarj-sub:hover {
+    scale: 1.1;
+    transition: scale 0.3s ease;
+}
+
+.tarj-sub img {
+    padding-top: 1rem;
+    padding-left: 1rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.tarj-sub h3 {
+    padding: 1rem 0.5rem 1rem 1rem;
+}
+
+@media (max-width: 800px) {
+    .contain-tarj {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;        /* el gap de 6rem es demasiado en columna */
+    }
+
+    .tarj-sub {
+        width: 80%;         /* ocupan más ancho en móvil */
+        flex-direction: row; /* icono a la izquierda, texto a la derecha */
+        align-items: center;
+    }
+}
+
+.seccion {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+/* Main -> acordeaones */
+
+.acordeon {
+    padding-top: 2rem;
+}
+
+.categoria {
+    border: 1px solid #ffffff80;
+    border-radius: 15px;
+    margin: 2rem;
+}
+
+.categoria:hover {
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+}
+
+.cat-header {
+    color: #fff;
+    font-size:clamp(0.8rem, 3vw, 1.3rem);
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: calc(100%);   
+    text-align: left;
+    padding: clamp(0.8rem, 6vw, 1.8rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cat-body {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease-in-out;
+}
+
+.categoria.abierto .cat-body {
+    padding-bottom: 1rem;
+    display: block;
+}
+
+.cat-header .flecha {
+    transition: transform 1s ease;
+}
+
+.categoria.abierto .cat-header .flecha {
+    transform: rotate(180deg);
+}
+
+/* Categorias */
+
+.cmd-tabla {
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+}
+
+.cmd-tabla th {
+    text-align: left;
+    padding: 0.6rem 1rem;
+    color: #ffffff80;
+    font-weight: 600;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.cmd-tabla td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #ffffff10;
+    vertical-align: top;
+}
+
+.cmd-tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.cmd-tabla code {
+    background: #ffffff15;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Main => Seccion de economia */
+
+.economia-desc {
+    color: #fff;
+    font-size: 1.6rem;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+
+.contain-economia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem 8rem 2rem;  
+    gap: 6rem;                      
+}
+
+.contain-economia img {
+    width: clamp(10rem, 20vw, 20rem);  
+    height: clamp(10rem, 20vw, 20rem);
+    border-radius: 26px;
+    flex-shrink: 0;                 
+}
+
+.economia-info {
+    color: white;
+    max-width: 1200px;
+    border-right: 3px solid #ffffff50;
+    padding-left: 2rem;
+    padding-right: 3rem;              
+}
+
+@media (max-width: 800px) {
+    .contain-economia {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;       
+    }
+}
+
+/* Tablas de economia */
+
+.economia-tabla {
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
+}
+
+.economia-tabla th {
+    text-align: left;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    padding: 2rem 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.economia-tabla td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #ffffff10;
+    vertical-align: top;
+}
+
+.economia-tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.economia-tabla code {
+    background: #ffffff15;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+
+/* Tabla tienda */
+
+.tienda-cmd {
+    margin: auto;
+    width: 80%;
+    border-top: 3px solid #ffffff80;
+    padding: 2rem;
+    padding-bottom: 6rem;
+}
+
+.tienda-tabla {
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
+}
+
+.tienda-tabla th {
+    text-align: left;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    padding: 2rem 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.tienda-tabla td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #ffffff10;
+    vertical-align: top;
+}
+
+.tienda-tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.tienda-tabla code {
+    background: #ffffff15;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+
+/* Seccion de items */
+
+.contain-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem 2rem 2rem;  
+    gap: 6rem;                      
+}
+
+.contain-items img {
+    width: clamp(10rem, 20vw, 20rem);  
+    height: clamp(10rem, 20vw, 20rem);
+    border-radius: 26px;
+    flex-shrink: 0;                 
+}
+
+.items-info {
+    color: white;
+    max-width: 1200px;
+    border-left: 3px solid #ffffff50;
+    padding-left: 2rem;
+    padding-right: 3rem;              
+}
+
+#items-img {
+    width: clamp(1em, 2vw, 2rem);  
+    height: clamp(1rem, 2vw, 2rem);
+}
+
+@media (max-width: 800px) {
+    .contain-items {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-top: 3rem;
+        gap: 1.5rem;       
+    }
+}
+
+/* Tabla items */
+
+
+.items-cmd {
+    margin: auto;
+    width: 80%;
+    border-top: 3px solid #ffffff80;
+    padding: 2rem;
+    padding-top: 2rem;
+}
+
+.items-tabla {
+    color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: clamp(0.8rem, 3vw, 1.3rem);
+}
+
+.items-tabla th {
+    text-align: left;
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    padding: 2rem 1rem;
+    color: #ffffff;
+    font-weight: 600;
+    border-bottom: 1px solid #ffffff20;
+}
+
+.items-tabla td {
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #ffffff10;
+    vertical-align: top;
+}
+
+.items-tabla tr:last-child td {
+    border-bottom: none;
+}
+
+.items-tabla code {
+    background: #ffffff15;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+/* Main => Nuevo por aqui? */
+
+.inv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem 2rem 2rem;  
+    gap: 4rem;                      
+}
+
+.inv img {
+    width: 300px;  
+    height: 200px;
+    object-fit: contain;
+    border-radius: 26px;              
+}
+
+.inv p {
+    color: #fff;
+    font-size: clamp(1rem, 3vw, 1.7rem);
+    padding: 0.7rem 1.5rem;
+}
+
+.inv-button {
+    display: block;
+    margin: 0 auto;
+    padding: 0.7rem 1.5rem;
+    font-size: clamp(1rem, 3vw, 1.7rem);
+    color: #fff;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.inv-button a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main => Creditos*/
+
+.seccion-cred {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+}
+
+.portafolio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 2rem 6rem 2rem;  
+    gap: 4rem;                      
+}
+
+.portafolio img {
+    width: clamp(5rem, 12vw, 12rem);  
+    height: clamp(5rem, 12vw, 12rem);
+    border-radius: 26px;
+    flex-shrink: 0;                 
+}
+
+.portafolio a {
+    color: #fff;
+    text-decoration: none;
+    font-size: clamp(1rem, 3vw, 1.7rem);
+    border: 1.5px solid #ffffff;
+    padding: 0.7rem 1.5rem;
+}
+
+.portafolio a:hover {
+    background-color: #ffffff;
+    transition: background-color 0.6s ease;
+    color: #000;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  /* empuja links al borde derecho */
+    width: 100%;
+    color: #fff;
+    padding: 2rem 3rem 3rem 3rem;
+    border-top: 1px solid #ffffff20;  /* separador sutil */
+}
+
+.creditos {
+    width: 70%;
+}
+
+.creditos p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.creditos-sub {
+    font-size: 0.75rem;
+    color: #ffffff60;  /* más tenue, es info secundaria */
+    margin-top: 0.4rem !important;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+}
+
+.links a {
+    font-size: 0.95rem;
+    color: #ffffff80;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.links a:hover {
+    color: #fff;
+}

@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KuroSite</title>
+    <link rel="icon" href="images/Pie.png">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="fondo"></div>
+    <nav>
+        <a class="nav-pfp" href="#inicio"><img src="images/mi_pfp.jpg" alt=""></a>
+        <a class="nav-sub" href="#comm">Comandos</a>
+        <span aria-hidden="true">†</span>
+        <a class="nav-sub" href="#econ">Economia</a>
+        <span aria-hidden="true">†</span>
+        <a class="nav-sub" href="#cred">Creditos</a>
+    </nav>
+
+    <main>
+        <!-- Main - Seccion de imagen e info-->
+        <div class="present reveal" id="inicio">
+            <img src="images/pfp.jpg" alt="">
+            <div class="contain-info">
+                <h2 class="nombre">KuroKat</h2>
+                <p class="info">Tu compañero gatuno del servidor Cherry Nippon Clan. 
+                    Estoy aqui para ayudarte a practicar japonés, 
+                    ganar Pts Kat, interactuar con todos y hacer 
+                    el server más kawaii ♡
+                </p>
+            </div>
+        </div>
+
+        <!-- Main - Seccion de tarjetas-->
+        <div class="contain-tarj">
+            <!-- Tarjeta 1 -->
+            <div class="tarj-sub reveal">
+                <img src="icons/com_icon.png" alt="">
+                <h3>+40 Comandos</h3>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="tarj-sub reveal">
+                <img src="icons/cat_icon.png" alt="">
+                <h3>8 Categorías</h3>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="tarj-sub reveal">
+                <img src="icons/pref_icon.png" alt="">
+                <h3>6 Prefijos (=>, Kuro, kuro...)</h3>
+            </div>
+            
+            <!-- Tarjeta 4 -->
+            <div class="tarj-sub reveal">
+                <img src="icons/econ_icon.png" alt="">
+                <h3>Sistema de economía propio</h3>
+            </div>
+        </div>
+
+        <h2 class="seccion reveal" id="comm">.✦ ݁˖ Comandos .✦ ݁˖</h2>
+
+        <!-- Main - Seccion de acordeones -->
+        <div class="acordeon">
+
+            <!-- Acordeon 1-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Utilidades</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">   <!-- Contenedor de la tabla -->
+                        <thead>                     <!-- Encabezado de la tabla -->
+                            <tr>
+                                <th>Comando</th>
+                                <th>Aliases</th>
+                                <th>Descripcion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>=>ayudakat</code></td>
+                                <td><code>help / hola</code></td>
+                                <td>Prsentacion del bot con todos los comandos</td>
+                            </tr>
+                            <tr>
+                                <td><code>=>info</code></td>
+                                <td> - </td>
+                                <td>Lista completa de los comandos</td>
+                            </tr>
+                            <tr>
+                                <td><code>=>infotienda</code></td>
+                                <td> - </td>
+                                <td>Muestra los comandos he informacion de la tienda </td>
+                            </tr>
+                            <tr>
+                                <td><code>=>tarea</code></td>
+                                <td><code>task</code></td>
+                                <td>Muestra los comandos para la seccion de tareas</td>
+                            </tr>
+                            <tr>
+                                <td><code>=>afk</code></td>
+                                <td> - </td>
+                                <td>Te pone en estado de afk hasta tu sig, mensaje</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Acordeon 2-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Niveles / XP</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">   <!-- Contenedor de la tabla -->
+                        <thead>                     <!-- Encabezado de la tabla -->
+                            <tr>
+                                <th>Comando</th>
+                                <th>Descripción</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>=>rank</code></td>
+                                <td>Muestra tu tarjeta de nivel</td>
+                                <td><code>=>rank</code> o <code>=>rank @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>top (pronto)</code></td>
+                                <td>Leaderboard del servidor (pronto)</td>
+                                <td><code>=>top (pronto)</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Acordeon 3-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Estudio de Japonés</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">
+                        <thead>
+                            <tr>
+                                <th>Comando</th>
+                                <th>Aliases</th>
+                                <th>Descripción</th>
+                                <th>Cooldown</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>=>practica</code></td>
+                                <td><code>=>practice / =>práctica</code></td>
+                                <td>Romaniza un hiragana o katakana aleatorio</td>
+                                <td><code>30min</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>trabajo</code></td>
+                                <td><code>=>work</code></td>
+                                <td>Romaniza una frase corta en japonés con contexto narrativo</td>
+                                <td><code>4h</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>estudio</code></td>
+                                <td><code>=>study</code></td>
+                                <td>Adivina el significado en español de un kanji N5</td>
+                                <td><code>2h</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>mision</code></td>
+                                <td><code>=>misión</code></td>
+                                <td>3 rondas seguidas (kana + kanji + frase). Recompensa completa si aciertas todo</td>
+                                <td><code>8h</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Acordeon 4-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Interacciones</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">
+                        <thead>
+                                <th>Comando</th>
+                                <th>Aliases</th>
+                                <th>Descripción</th>
+                                <th>Uso</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>=>besar</code></td>
+                                <td><code>kiss</code></td>
+                                <td>Besa a alguien con un gif</td>
+                                <td><code>=>besar @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>abrazar</code></td>
+                                <td><code>hug</code></td>
+                                <td>Abraza a alguien con un gif</td>
+                                <td><code>=>abrazar @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>disparar</code></td>
+                                <td><code>shoot</code></td>
+                                <td>Dispara a alguien!</td>
+                                <td><code>=>disparar @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>matar</code></td>
+                                <td><code>kill</code></td>
+                                <td>Asesina a alguien que te cae mal</td>
+                                <td><code>=>matar @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>tomate</code></td>
+                                <td> - </td>
+                                <td>Lanzale tomates a alguien</td>
+                                <td><code>=>tomate @usuario</code></td>
+                            </tr>
+                                <td><code>=>insultar</code></td>
+                                <td><code>insult / roast</code></td>
+                                <td>Lanzale un unsulto a alguien</td>
+                                <td><code>=>insultar @usuario</code></td>
+                            </tr>
+                                <td><code>=>suicidio</code></td>
+                                <td><code>suicide</code></td>
+                                <td>Estas cansado de tu vida?</td>
+                                <td>Comando de acción solo (sin mencionar a nadie)</td>
+                            </tr>
+                                <td><code>=>amor</code></td>
+                                <td><code>love / ship / shippeo</code></td>
+                                <td>Calcula el % de amor entre dos personas</td>
+                                <td><code>=>amor @usuario</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Acordeon 5-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Imágenes / Random</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">
+                        <thead>
+                            <th>Comando</th>
+                            <th>Aliases</th>
+                            <th>Descripción</th>
+                        </thead>
+                        <tr>
+                            <td><code>=>neko</code></td>
+                            <td><code> - </code></td>
+                            <td>Imagen random de chica gato</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>kitsune</code></td>
+                            <td><code> - </code></td>
+                            <td>Imagen random de chica zorro</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>ado</code></td>
+                            <td><code> - </code></td>
+                            <td>Imagen random de Ado</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>gato</code></td>
+                            <td><code>cat</code></td>
+                            <td>Foto random de gato</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>perro</code></td>
+                            <td><code>dog</code></td>
+                            <td>Foto random de perro</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>conejo</code></td>
+                            <td><code>rebbit</code></td>
+                            <td>Foto random de un conejo</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>pato</code></td>
+                            <td><code>duck</code></td>
+                            <td>Foto random de pato</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>zorro</code></td>
+                            <td><code>fox</code></td>
+                            <td>Foto random de un zorro</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Acordeon 6-->
+            <div class="categoria reveal">
+                <button class="cat-header">
+                    <span>Tareas</span>
+                    <span class="flecha">▼</span>
+                </button>
+                <div class="cat-body">
+                    <table class="cmd-tabla">
+                        <thead>
+                            <th>Comando</th>
+                            <th>Aliases</th>
+                            <th>Descripción</th>
+                            <th>Uso</th>
+                        </thead>
+                        <tr>
+                            <td><code>=>tarea lista</code></td>
+                            <td><code>list / ver</code></td>
+                            <td>Muestra todas tus tareas pendientes tuyas o de otro usuario</td>
+                            <td><code>=>tarea lista @usuario </code></td>
+                        </tr>
+                        <tr>
+                            <td><code>=>tarea agregar </code></td>
+                            <td><code>task / add / nueva</code></td>
+                            <td>Agrega una tarea a tu lista</td>
+                            <td><code>=>tarea agregar</code> Ir a dormir temprano</td>
+                        </tr>
+                        <tr>
+                            <td><code>=>tarea quitar</code></td>
+                            <td><code>done / delete / borrar</code></td>
+                            <td>Elmina una terea de tu lista</td>
+                            <td><code>=>tarea quitar</code> Numero de la tarea </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <h2 class="seccion reveal" id="econ">.✦ ݁˖ Economia .✦ ݁˖</h2>
+
+        <!-- Main - Seccion de economia -->
+        <div class="economia-cmd reveal">      <!-- Zona 1 de comandos de economia -->
+            <h3 class="economia-desc">Comandos Economia</h3>
+            <div class="contain-economia">
+                <div class="economia-info">
+                    <table class="economia-tabla">
+                        <thead>
+                            <tr>
+                                <th>Comando</th>
+                                <th>Descripcion</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>=>saldo</code></td>
+                                <td>Muestra tus puntos Kat actuales o los de otro miembro</td>
+                                <td><code>=>saldo / =>saldo @usuario</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>=>dar</code></td>
+                                <td>Da puntos kat otro usuario (Admin)</td>
+                                <td><code>=>dar @usuario</code> Cantidad</td>
+                            </tr>
+                            <tr>
+                                <td><code>=>quitar</code></td>
+                                <td>Quita puntos kat a un usuario (Admin)</td>
+                                <td><code>=>quitar @usuario</code> Cantidad</td>
+                            </tr>
+                            <tr>
+                                <td><code>=>ranking</code></td>
+                                <td>Top de los usuarios con mas Pts Kat del servidor</td>
+                                <td><code> - </code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <img src="images/economia_pfp.jpg" alt="">
+            </div>
+        </div>
+        <div class="tienda-cmd reveal">        <!-- Zona 2 de comandos uso de la tienda -->
+            <h3 class="economia-desc">Comandos Tienda</h3>
+            <table class="tienda-tabla">
+                <thead>
+                    <tr>
+                        <th>Comando</th>
+                        <th>Aliases</th>
+                        <th>Descripcion</th>
+                        <th>Uso</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>=>tienda</code></td>
+                        <td><code>shop</code></td>
+                        <td>Muestra los items disponibles de la tienda</td>
+                        <td><code> - </code></td>
+                    </tr>
+                    <tr>
+                        <td><code>=>comprar</code></td>
+                        <td><code>buy</code></td>
+                        <td>Compra un item de la tienda con su nombre exacto</td>
+                        <td><code>=>comprar</code> Nombre del item</td>
+                    </tr>
+                    <tr>
+                        <td><code>=>inventario</code></td>
+                        <td><code>inv</code></td>
+                        <td>Ve los itemos disponibles de tu inventario</td>
+                        <td><code> - </code></td>
+                    </tr>
+                    <tr>
+                        <td><code>=>usar</code></td>
+                        <td><code>use</code></td>
+                        <td>Usa un item de tu inventario con el nombre exacto</td>
+                        <td><code>=>usar</code> Nombre del item</td>
+                    </tr>
+                    <tr>
+                        <td><code>=>dar_item</code></td>
+                        <td><code>daritem / regalar / give</code></td>
+                        <td>Regala un item de tu inventario a alguien</td>
+                        <td><code>=>dar_item @usuario</code> Nombre del item</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="items-cmd" reveal>         <!-- Zona 3 items de la tienda -->
+            <h3 class="economia-desc">Items de la tienda</h3>
+            <div class="contain-items">
+                <img src="images/tienda_pfp.jpg" alt="">
+                <div class="items-info">
+                    <table class="items-tabla">
+                        <thead>
+                            <tr>
+                                <th>Img</th>
+                                <th>Item</th> 
+                                <th>Descripcion</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img id="items-img" src="Items/Paste.png" alt=""></td>
+                                <td><code>pastel</code></td>
+                                <td>Un pastel rosa con sabor a sakura. Demaciado kawaii para comerlo!</td>
+                                <td>45</td>
+                            </tr>
+                            <tr>
+                                <td><img id="items-img" src="Items/Monster.png" alt=""></td>
+                                <td><code>monster</code></td>
+                                <td>Una lata de monster edicion especial. Energia para estudiar japones!</td>
+                                <td>40</td>
+                            </tr>
+                            <tr>
+                                <td><img id="items-img" src="Items/onigiri.png" alt=""></td>
+                                <td><code>onigiri</code></td>
+                                <td>Un onigiri casero, simple pero delicioso, como el japones basico</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td><img id="items-img" src="Items/Ramen.png" alt=""></td>
+                                <td><code>ramen</code></td>
+                                <td>Un tazon de ramen humeante, perfecto para estudiar japones a las 3am</td>
+                                <td>60</td>
+                            </tr>
+                            <tr>
+                                <td><img id="items-img" src="Items/pchan.png" alt=""></td>
+                                <td><code>pchan</code></td>
+                                <td>Un p chan de coleccion</td>
+                                <td>20</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="seccion-cred reveal">.✦ ݁˖ Nuevo por aqui? .✦ ݁˖</h2>
+        <div class="inv reveal">
+            <img src="images/Ban_Disc.png" alt="">
+            <p class="cred-info"> Unete a nuestro servidor de Discord!</p>
+            </p>
+        </div>
+        <button class="inv-button reveal"> <a href="https://discord.gg/WpMdsNX3x2"> >> Click aqui! << </a></button>
+
+        <h2 class="seccion-cred reveal" id="cred">.✦ ݁˖ Creditos .✦ ݁˖</h2>
+        <div class="portafolio reveal">
+            <img src="images/mi_pfp.jpg" alt="">
+            <a href="">Mis redes</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="creditos reveal">
+            <p>Yukki © 2026 • KuroKat Bot</p>
+            <p class="creditos-sub">Arte utilizado sin fines comerciales, créditos a sus respectivos artistas</p>
+        </div>
+        <div class="links">
+            <a href="">Mi Discord</a>
+            <a href="">Mi GitHub</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
